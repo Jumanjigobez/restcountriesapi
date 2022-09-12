@@ -272,7 +272,7 @@ body.dark .card{
 body.dark .search_option i,body.dark .search_option input{
 	color: var(--white);
 }
-@media (max-width: 375px){
+@media (max-width: 600px){
 	#header{
 		padding: 1rem 1rem;
 		font-size: 14px;
