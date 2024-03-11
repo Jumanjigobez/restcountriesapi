@@ -1,0 +1,331 @@
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --light-mode-bg: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+body.light {
+  background-color: var(--light-mode-bg);
+  color: var(--light-mode-text);
+}
+body.dark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+#header {
+  min-height: 5rem;
+  background-color: var(--white);
+  box-shadow: 0px 1px 3px 0px #888888;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 2rem 5rem;
+}
+
+.title {
+  font-weight: 800;
+}
+.btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+.btn i {
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+}
+.back_btn {
+  border: none;
+  outline: none;
+  background: var(--white);
+  box-shadow: 0px 1px 2px grey;
+  border-radius: 5px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+.back_btn i {
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+body.dark .btn,
+body.dark .btn i {
+  color: var(--white);
+}
+#contents {
+  background-color: var(--light-mode-bg);
+  padding: 2rem 5rem;
+}
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.search_option {
+  background-color: var(--white);
+  box-shadow: 0px 1px 2px grey;
+  border-radius: 2px;
+  padding: 1rem 2rem;
+  width: 50%;
+}
+.search_option i {
+  color: var(--dark-gray);
+  font-size: 20px;
+}
+.search_option input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0rem 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  width: 80%;
+  color: var(--dark-gray);
+}
+
+.filter_option {
+  background-color: var(--white);
+  box-shadow: 0px 1px 2px grey;
+  border-radius: 2px;
+  padding: 1rem 2rem;
+  position: relative;
+  width: 30%;
+}
+/*Kindly someone help me on this area for styling option*/
+.filter_option select {
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.filter_option select:focus {
+  outline: none;
+}
+
+#loading {
+  display: block;
+  padding: 2rem;
+  text-align: center;
+}
+#loading.loaded {
+  display: none;
+}
+
+#loading h2 {
+  letter-spacing: 5px;
+  animation: load 1.5s infinite linear;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#country_part {
+  background-color: var(--light-mode-bg);
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 5rem; */
+  height: 500px;
+  width: 950px;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px grey;
+  font-size: 14px;
+  width: 250px;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.card:hover {
+  box-shadow: 2px 5px 10px 10px grey;
+}
+.card .flag {
+  position: relative;
+  display: block;
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+.card .flag img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+.details {
+  padding: 1rem;
+}
+.country_name h2 {
+  font-weight: 800;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+.country_info {
+  margin: 20px 0px;
+}
+.country_info p {
+  margin-top: 5px;
+}
+/*Details page styles*/
+.details_part {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.details_part .flag {
+  flex-basis: 45%;
+  position: relative;
+  width: 100%;
+}
+.details_part .flag img {
+  width: 100%;
+  height: 100%;
+}
+.details_part .details_info {
+  flex-basis: 45%;
+}
+.details_info .country_name h2 {
+  margin-top: 1rem;
+  font-size: 16px;
+  font-weight: 800;
+}
+.details_info .info {
+  margin-top: 1rem;
+  width: 100%;
+}
+.details_info .info ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 3rem;
+}
+.details_info .info ul li {
+  list-style-type: none;
+  padding-top: 1rem;
+  font-size: 14px;
+}
+.details_info .borders {
+  margin-top: 4rem;
+}
+.border_btn {
+  border: none;
+  outline: none;
+  background: var(--white);
+  box-shadow: 0px 1px 2px grey;
+  border-radius: 5px;
+  padding: 2px 20px;
+  margin: auto;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+body.dark #contents,
+body.dark #country_part {
+  background-color: var(--very-dark-blue);
+}
+body.dark #header,
+body.dark .back_btn,
+body.dark .border_btn,
+body.dark .search_option,
+body.dark .filter_option,
+body.dark .filter_option select,
+body.dark .card {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  box-shadow: 2px 2px 2px var(--dark-blue);
+}
+body.dark .search_option i,
+body.dark .search_option input {
+  color: var(--white);
+}
+#footer {
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Medium to Small Screen Viewers */
+@media (max-width: 800px) {
+  #header {
+    padding: 1rem 1rem;
+    font-size: 14px;
+  }
+  #contents {
+    padding: 1rem 1rem;
+  }
+  .options {
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  .search_option {
+    padding: 1rem 1rem;
+    width: 100%;
+  }
+  .filter_option {
+    margin-top: 2rem;
+    width: 80%;
+  }
+  #country_part {
+    padding: 1rem 1rem;
+    width: 80%;
+  }
+  .details_part {
+    flex-direction: column;
+  }
+}
