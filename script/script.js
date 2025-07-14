@@ -159,7 +159,7 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,population,region,ca
     loading.classList.add("loaded");
     data.forEach(elem => {
       country_part.innerHTML += `
-				<a href="#${elem.name}" id="link" value="${
+				<a href="#${elem.name.official}" id="link" value="${
         elem.name
       }" onclick="getName(this);"><div class="card">
 						<div class="flag">
@@ -168,6 +168,7 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,population,region,ca
 						<div class="details">
 							<div class="country_name">
 								<h2>${elem.name.official}</h2>
+	
 							</div>
 							<div class="country_info">
 								<p><b style="font-weight:600;">Population:</b> ${elem.population.toLocaleString()}</p>
