@@ -152,7 +152,7 @@ const Filter = async () => {
 };
 
 //default fetching without searchterm and filter selected
-fetch("https://restcountries.com/v2/all")
+fetch("https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital")
   .then(response => response.json())
   .then(data => {
     country_part.innerHTML = "";
