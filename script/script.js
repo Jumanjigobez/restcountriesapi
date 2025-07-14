@@ -163,11 +163,11 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,population,region,ca
         elem.name
       }" onclick="getName(this);"><div class="card">
 						<div class="flag">
-							<img src="${elem.flags.svg}" alt="${elem.name} Flag Image">
+							<img src="${elem.flags.svg}" alt="${elem.name.official} Flag Image">
 						</div>
 						<div class="details">
 							<div class="country_name">
-								<h2>${elem.name}</h2>
+								<h2>${elem.name.official}</h2>
 							</div>
 							<div class="country_info">
 								<p><b style="font-weight:600;">Population:</b> ${elem.population.toLocaleString()}</p>
